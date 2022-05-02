@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        let answer;
+        if (a < b) {
+          answer = a;
+        } else {
+          answer = b;
+        } // 해당 if문을 거치면 a와 b중 작은 값이 answer로 대입되어있다.
+
+        if (c < answer) {
+          answer = c;
+        } // 해당 if문을 거치면 c와 answer중 작은 값이 answer가 된다.
+
+        return answer;
+      }
+
+      console.log(solution(22, 7, 100));
+    </script>
+  </body>
+</html>
