@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      // 삼각형은 가장 긴 변을 제외한 나머지 변의 길이가 가장 긴 변보다는 커야 만들어질 수 있다.
+      function solution(a, b, c) {
+        let answer = "YES",
+          max; // 가장 긴 변을 max라고 선언해둠.
+        let sum = a + b + c; // 가장 긴 변을 제외한 나머지 2개의 변이 a b c 중 어떤 것에 있을지 모르니 모든 수를 더한 후 max와 빼주기 위해 선언함.
+
+        if (a > b) {
+          max = a;
+        } else {
+          max = b;
+        }
+        if (c > max) {
+          max = c;
+        } // a b c 중 가장 큰 값이 max에 대입.
+
+        if (sum - max < max) {
+          answer = "NO";
+        } // a b c 를 더한 값에서 가장 큰 값을 빼고, 그 뺀 값이 가장 큰 값보다 작으면 삼각형이 성립이 되지 않는 것을 이용.
+
+        return answer;
+      }
+
+      console.log(solution(55, 11, 44));
+    </script>
+  </body>
+</html>
