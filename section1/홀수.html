@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = [];
+        let sum = 0, // 홀수의 합 정답 초기화
+          min = Number.MAX_SAFE_INTEGER; // 홀수 중 최솟값 정답 초기화 (가장 큰 수로)
+        for (let x of arr) {
+          // arr를 x에 덮어씌움.
+          if (x % 2 === 1) {
+            // x라는 배열을 돌며 값을 2로 나눴을 때 1이 남는 수가 참이 됨 (홀수)
+            sum += x;
+            // sum = sum + x와 같은 뜻 (if문을 통과한 홀수들을 누적해서 더해줌)
+            if (x < min) {
+              // 홀수 if문을 통과한 홀수 중 min보다 낮은 값(최소값)을 구해서 min값에 새로고침
+              min = x;
+            }
+          }
+        }
+        answer.push(sum);
+        answer.push(min);
+
+        return answer;
+      }
+
+      arr = [12, 77, 38, 41, 53, 92, 85];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
