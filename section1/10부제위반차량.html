@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(day, arr) {
+        let answer = 0;
+        for (x of arr) {
+          // arr라는 배열을 순환하게 하는 for..of구문
+          if (x % 10 === day) {
+            // 10자리수 부터는 10으로 나누면 1의자리가 무조건 나머지 몫이 되기 때문에 1의자리를 알 수 있음.
+            answer++; // answer에 1씩 더해주는 로직.
+          }
+        }
+        return answer;
+      }
+      let arr = [12, 20, 54, 30, 87, 91, 30];
+      console.log(solution(3, arr));
+    </script>
+  </body>
+</html>
